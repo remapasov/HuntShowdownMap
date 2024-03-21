@@ -1,4 +1,19 @@
-h1 {
-  color: #27aedb;
-  text-align: center;
+.main {
+  position: relative;
+  // width: 100vw;
+  height: 100%;
+  margin: 0 auto;
+  // overflow: hidden;
+}
+
+.leaflet-container {
+  margin: 0 auto;
+  height: 500px;
+  width: 500px;
+  // overflow: hidden;
+  border: 1px solid black;
+}
+
+.leaflet-control-container {
+  display: none;
 }
