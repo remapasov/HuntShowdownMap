@@ -1,29 +1,50 @@
-import React, { Component } from "react";
-import { ImageOverlay, MapContainer, Marker, Popup, TileLayer, useMap, LayerGroup, LayersControl, FeatureGroup, Circle, Rectangle } from 'react-leaflet';
-import {CRS} from 'leaflet';
+import React, { useState } from 'react';
+import { Map } from './Map.js';
 
 import '../styles/App.scss';
-import MyImage from '../images/map1.png';
-
-const position = [50.5, 30.5];
-const rectangle = [
-  [51.49, -0.08],
-  [51.5, -0.06],
-]
-
-const bounds = [[-220, 0], [600, 800]];
+import stillwater from '../images/Stillwater.png';
+import lawson from '../images/Lawson.png';
+import desalle from '../images/Desalle.png';
 
 const App = () => {
-    return (
-      <MapContainer center={position} zoom={0} minZoom={-4} scrollWheelZoom={true} crs={CRS.Simple}>
-        <ImageOverlay
-          url={MyImage}
-          bounds={bounds}
-          opacity={1}
-          zIndex={10}
-        />
-      </MapContainer>
-    );
+  const [map, setMap] = useState(stillwater);
+
+  const buttonMapClick = (mapType, e) => {
+    setMap(mapType);
+  };
+
+
+  return (
+    <>
+      <header>
+        <div className='header'>Hunt Showdown Map</div>
+      </header>
+      <nav className='header-buttons'>
+        <button
+          className='map-button'
+          type='button'
+          onClick={(e) => buttonMapClick(stillwater)}
+        >
+          Stillwater Bayou
+        </button>
+        <button
+          className='map-button'
+          type='button'
+          onClick={(e) => buttonMapClick(lawson)}
+        >
+          Lawson Delta
+        </button>
+        <button
+          className='map-button'
+          type='button'
+          onClick={(e) => buttonMapClick(desalle)}
+        >
+          DeSalle
+        </button>
+      </nav>
+      <Map map={map}/>
+    </>
+  );
 }
 
 export default App;
