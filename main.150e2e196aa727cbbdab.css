@@ -1,0 +1,20 @@
+/*!**************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/App.scss ***!
+  \**************************************************************************************************************/
+.main {
+  position: relative;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.leaflet-container {
+  margin: 0 auto;
+  height: 500px;
+  width: 500px;
+  overflow: hidden;
+  border: 1px solid black;
+}
+
+.leaflet-control-container {
+  display: none;
+}
