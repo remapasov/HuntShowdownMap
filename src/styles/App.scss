@@ -10,11 +10,15 @@ header {
   align-items: center;
 
   .header {
-    // margin: 0 auto;
     font-size: 25px;
     text-align: center;
     color: #eee;
   }
+}
+
+main {
+  display: flex;
+  justify-content: center;
 }
 
 .header-buttons {
@@ -22,13 +26,13 @@ header {
   justify-content: center;
   align-items: center;
   height: 40px;
-  margin-bottom: 20px;
+  margin: 10px 0 10px;
 
   .map-button {
     border: 0;
-    // line-height: 2.5;
-    padding: 15px 20px;
-    // font-size: 1rem;
+    margin: 0 10px;
+    width: 100px;
+    height: 40px;
     text-align: center;
     color: #fff;
     text-shadow: 1px 1px 1px #000;
@@ -43,6 +47,11 @@ header {
     box-shadow:
       inset 2px 2px 3px rgba(255, 255, 255, 0.6),
       inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+
+    &.active {
+      // border: 3px solid #330f0f;
+      background-color: rgba(166, 166, 166, 1);
+    }
 
     &:hover {
       background-color: rgba(166, 166, 166, 1);
@@ -62,11 +71,58 @@ header {
   height: 1000px;
   width: 1000px;
   overflow: hidden;
-  border: 1px solid black;
+}
+
+.popup-img {
+  object-fit: cover;
+  width: 400px;
+  cursor: zoom-in;
+  border-radius: 12px;
+  border: 5px solid #a9aeb0;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 14px;
+
+  &:hover {
+    transform: scale(2);
+  }
+}
+
+.map-filters {
+  width: 200px;
+  margin: 20px 0 0 20px;
+
+  .map-filters-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    height: 26px;
+
+    .filter-img {
+      width: 20px;
+      height: 20px;
+
+      &.active {
+        border: 2px solid gold;
+      }
+    }
+
+    .filter-name {
+      margin-left: 10px;
+    }
+  }
 }
 
 .leaflet-control-container {
   display: none;
+}
+
+.leaflet-popup-content-wrapper {
+  width: 400px;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.leaflet-popup-content {
+  margin: 0;
 }
 
 .leaflet-marker-pane img {
