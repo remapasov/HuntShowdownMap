@@ -42,7 +42,7 @@ const App = () => {
           </div>
           <div className='map-filters-item' onClick={(e) => filterItemClick('trait')}>
             <img className={`filter-img ${filters.trait && 'active'}`} src={trait} />
-            <div className='filter-name'>Tool Box</div>
+            <div className='filter-name'>Trait</div>
           </div>
         </div>
         <div className='map-field'>
