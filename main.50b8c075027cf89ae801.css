@@ -1,0 +1,116 @@
+/*!**************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/App.scss ***!
+  \**************************************************************************************************************/
+body {
+  margin: 0;
+}
+
+header {
+  height: 60px;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .header {
+  font-size: 25px;
+  text-align: center;
+  color: #eee;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.header-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  margin: 10px 0 10px;
+}
+.header-buttons .map-button {
+  border: 0;
+  margin: 0 10px;
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: rgb(102, 95, 95);
+  background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+.header-buttons .map-button.active {
+  background-color: rgb(166, 166, 166);
+}
+.header-buttons .map-button:hover {
+  background-color: rgb(166, 166, 166);
+}
+.header-buttons .map-button:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.hunt-map {
+  margin: 0 auto;
+  max-height: 1000px;
+  height: 1000px;
+  width: 1000px;
+  overflow: hidden;
+}
+
+.popup-img {
+  object-fit: cover;
+  width: 400px;
+  cursor: zoom-in;
+  border-radius: 12px;
+  border: 5px solid #a9aeb0;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 14px;
+}
+.popup-img:hover {
+  transform: scale(2);
+}
+
+.map-filters {
+  width: 200px;
+  margin: 20px 0 0 20px;
+}
+.map-filters .map-filters-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: 26px;
+}
+.map-filters .map-filters-item .filter-img {
+  width: 20px;
+  height: 20px;
+}
+.map-filters .map-filters-item .filter-img.active {
+  border: 2px solid gold;
+}
+.map-filters .map-filters-item .filter-name {
+  margin-left: 10px;
+}
+
+.leaflet-control-container {
+  display: none;
+}
+
+.leaflet-popup-content-wrapper {
+  width: 400px;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+}
+
+.leaflet-marker-pane img {
+  background-color: transparent;
+  border: none;
+}
+
+/*# sourceMappingURL=main.50b8c075027cf89ae801.css.map*/
