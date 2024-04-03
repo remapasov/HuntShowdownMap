@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { ImageOverlay, MapContainer, Marker, Popup } from 'react-leaflet';
-import { DomEvent, CRS, Icon, Point } from 'leaflet';
+import { ImageOverlay, MapContainer, Marker, Popup, useMapEvents } from 'react-leaflet';
+import { divIcon, DomEvent, CRS, Icon, Point } from 'leaflet';
 
 import { traitImg, toolboxImg, } from './constants';
 
@@ -10,13 +10,24 @@ const bounds = [[-4000, -4000], [4000, 4000]];
 const setIcon = (iconUrl) => {
   return new Icon({
     iconUrl: iconUrl,
-    iconSize: new Point(30, 30),
+    iconSize: new Point(25, 25),
     className: 'leaflet-div-icon',
     interactive: false,
   });
 }
 
 export const Map = (props) => {
+
+ /* Tempopal - need for markers position */
+ const MapEvents = () => {
+    useMapEvents({
+      click(e) {
+        console.log(e.latlng.lat);
+        console.log(e.latlng.lng);
+      },
+    });
+    return false;
+  };
 
   return (
     <MapContainer
@@ -27,13 +38,12 @@ export const Map = (props) => {
       maxZoom={3}
       scrollWheelZoom={true}
       crs={CRS.Simple}
-      // zoomSnap={0}
       zoomDelta={0.5}
       attributionControl={false}
       maxBounds={bounds}
       doubleClickZoom={false}
-      // dragging={false}
     >
+      <MapEvents />
       <ImageOverlay
         url={props.mapImage}
         bounds={bounds}

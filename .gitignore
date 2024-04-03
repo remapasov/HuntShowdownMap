@@ -1,5 +1,7 @@
 *.log
+*.css.map
 node_modules
 dist
 src/images
 package-lock.json
+index-bundle.js.map

@@ -3,9 +3,9 @@ import { Map } from './Map.js';
 
 import '../styles/App.scss';
 import { constants, initialFilterState } from './constants';
-import stillwater from '../images/Stillwater.png';
-import lawson from '../images/Lawson.png';
-import desalle from '../images/Desalle.png';
+import stillwater from '../images/Stillwater_origin.png';
+import lawson from '../images/Lawson_origin.png';
+import desalle from '../images/Desalle_origin.png';
 
 import toolBox from '../images/toolbox_img.png';
 import trait from '../images/levering_cr.jpg';
@@ -30,9 +30,9 @@ const App = () => {
 
   return (
     <>
-      {/*<header>
+      <header>
         <div className='header'>Hunt Showdown Map</div>
-      </header>*/}
+      </header>
       <main>
         <div className='map-filters'>
           <div className={`map-filters-item ${filters.toolbox && 'active'}`} onClick={(e) => filterItemClick('toolbox')}>

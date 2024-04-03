@@ -2,26 +2,25 @@ body {
   margin: 0;
 }
 
-// header {
-//   height: 60px;
-//   background-color: #000;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
+header {
+  height: 60px;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-//   .header {
-//     font-size: 25px;
-//     text-align: center;
-//     color: #eee;
-//   }
-// }
+  .header {
+    font-size: 25px;
+    text-align: center;
+    color: #eee;
+  }
+}
 
 main {
   display: flex;
   justify-content: center;
   position: relative;
-  height: 100vh;
-  // background-color: #ddd;
+  height: calc(100vh - 60px);
 }
 
 .header-buttons {
@@ -43,6 +42,7 @@ main {
     text-align: center;
     color: #fff;
     text-shadow: 1px 1px 1px #000;
+    cursor: pointer;
     border-radius: 10px;
     background-color: rgba(102, 95, 95, 1);
     background-image: linear-gradient(
@@ -73,7 +73,7 @@ main {
 
 .hunt-map {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -93,11 +93,15 @@ main {
 .map-filters {
   position: absolute;
   width: 200px;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 120px);
   z-index: 1000;
   left: 0;
   padding-top: 60px;
   background-color: rgba(221, 221, 221, .4);
+
+  @media (width <= 480px) {
+    background: transparent;
+  }
 
   .map-filters-item {
     display: flex;
@@ -113,8 +117,15 @@ main {
       to top left,
       rgba(0, 0, 0, 0.2),
       rgba(0, 0, 0, 0.2) 30%,
-      rgba(0, 0, 0, 0)
+      rgba(0, 0, 0, 0.3) 70%
     );
+
+    @media (width <= 480px) {
+      width: 25px;
+      height: 25px;
+      padding: 0;
+      justify-content: center;
+    }
 
     &.active {
       border: 2px solid gold;
@@ -133,6 +144,10 @@ main {
       margin-left: 10px;
       color: #fff;
       text-shadow: 1px 1px 1px #000;
+
+      @media (width <= 480px) {
+        display: none;
+      }
     }
   }
 }
