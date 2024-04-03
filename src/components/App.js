@@ -22,7 +22,6 @@ const App = () => {
   };
 
   const filterItemClick = (filter) => {
-    console.log(filter);
     setFilters({
       ...filters,
       [filter]: !filters[filter],
@@ -31,17 +30,17 @@ const App = () => {
 
   return (
     <>
-      <header>
+      {/*<header>
         <div className='header'>Hunt Showdown Map</div>
-      </header>
+      </header>*/}
       <main>
         <div className='map-filters'>
-          <div className='map-filters-item' onClick={(e) => filterItemClick('toolbox')}>
-            <img className={`filter-img ${filters.toolbox && 'active'}`} src={toolBox} />
+          <div className={`map-filters-item ${filters.toolbox && 'active'}`} onClick={(e) => filterItemClick('toolbox')}>
+            <img className='filter-img' src={toolBox} />
             <div className='filter-name'>Tool Box</div>
           </div>
-          <div className='map-filters-item' onClick={(e) => filterItemClick('trait')}>
-            <img className={`filter-img ${filters.trait && 'active'}`} src={trait} />
+          <div className={`map-filters-item ${filters.trait && 'active'}`} onClick={(e) => filterItemClick('trait')}>
+            <img className='filter-img' src={trait} />
             <div className='filter-name'>Trait</div>
           </div>
         </div>

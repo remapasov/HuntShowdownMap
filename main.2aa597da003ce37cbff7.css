@@ -5,28 +5,21 @@ body {
   margin: 0;
 }
 
-header {
-  height: 60px;
-  background-color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-header .header {
-  font-size: 25px;
-  text-align: center;
-  color: #eee;
-}
-
 main {
   display: flex;
   justify-content: center;
+  position: relative;
+  height: 100vh;
 }
 
 .header-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1001;
   height: 40px;
   margin: 10px 0 10px;
 }
@@ -54,10 +47,8 @@ main {
 }
 
 .hunt-map {
-  margin: 0 auto;
-  max-height: 1000px;
-  height: 1000px;
-  width: 1000px;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -74,24 +65,40 @@ main {
 }
 
 .map-filters {
+  position: absolute;
   width: 200px;
-  margin: 20px 0 0 20px;
+  height: calc(100vh - 60px);
+  z-index: 1000;
+  left: 0;
+  padding-top: 60px;
+  background-color: rgba(221, 221, 221, 0.4);
 }
 .map-filters .map-filters-item {
   display: flex;
   align-items: center;
   cursor: pointer;
   height: 26px;
+  margin: 0 20px 20px;
+  padding-left: 10px;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  background-color: rgb(166, 166, 166);
+  background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+}
+.map-filters .map-filters-item.active {
+  border: 2px solid gold;
+}
+.map-filters .map-filters-item:hover {
+  background-color: rgb(227, 227, 227);
 }
 .map-filters .map-filters-item .filter-img {
   width: 20px;
   height: 20px;
 }
-.map-filters .map-filters-item .filter-img.active {
-  border: 2px solid gold;
-}
 .map-filters .map-filters-item .filter-name {
   margin-left: 10px;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
 }
 
 .leaflet-control-container {
@@ -113,4 +120,4 @@ main {
   border: none;
 }
 
-/*# sourceMappingURL=main.50b8c075027cf89ae801.css.map*/
+/*# sourceMappingURL=main.2aa597da003ce37cbff7.css.map*/

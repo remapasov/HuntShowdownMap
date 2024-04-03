@@ -23,8 +23,8 @@ export const Map = (props) => {
       className='hunt-map'
       center={position}
       zoom={-3}
-      minZoom={-4}
-      maxZoom={2}
+      minZoom={-5}
+      maxZoom={3}
       scrollWheelZoom={true}
       crs={CRS.Simple}
       // zoomSnap={0}
