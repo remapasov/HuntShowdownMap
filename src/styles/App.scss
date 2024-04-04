@@ -1,16 +1,31 @@
+@font-face {
+  font-family: 'Unfair';
+  src: url('../fonts/Unfair Style 2 Rough.woff') format('woff');
+}
+
+@keyframes fogmove {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
 body {
   margin: 0;
+  font-family: 'Unfair';
 }
 
 header {
-  height: 60px;
+  height: 90px;
   background-color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
 
   .header {
-    font-size: 25px;
+    font-size: 45px;
     text-align: center;
     color: #eee;
   }
@@ -20,7 +35,50 @@ main {
   display: flex;
   justify-content: center;
   position: relative;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 90px);
+  overflow: hidden;
+  letter-spacing: .1rem;
+}
+
+.map-field {
+  background-size: cover;
+  background-image: url('../images/27_Hunt_screenshot_Update4.1.jpg');
+
+  &::before,
+  &::after,
+  .fog::before,
+  .fog::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-x;
+
+    @media (width <= 480px) {
+      display: none;
+    }
+  }
+
+  .fog::before,
+  .fog::after {
+    left: 100%;
+  }
+
+  &::before,
+  .fog::before {
+    background-image: url('../images/fog-1.png');
+    animation: fogmove 40s linear 0s infinite;
+  }
+
+  &::after,
+  .fog::after {
+    background-image: url('../images/fog-2.png');
+    animation: fogmove 30s linear 0s infinite;
+  }
 }
 
 .header-buttons {
@@ -35,6 +93,9 @@ main {
   margin: 10px 0 10px;
 
   .map-button {
+    font-family: 'Unfair';
+    font-size: 15px;
+    letter-spacing: .2rem;
     border: 0;
     margin: 0 10px;
     width: 100px;
@@ -44,7 +105,8 @@ main {
     text-shadow: 1px 1px 1px #000;
     cursor: pointer;
     border-radius: 10px;
-    background-color: rgba(102, 95, 95, 1);
+    // background-color: rgba(102, 95, 95, .6);
+    background-color: rgba(58, 116, 135, .6);
     background-image: linear-gradient(
       to top left,
       rgba(0, 0, 0, 0.2),
@@ -52,20 +114,24 @@ main {
       rgba(0, 0, 0, 0)
     );
     box-shadow:
-      inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+      inset 2px 2px 3px rgba(255, 255, 255, .6),
       inset -2px -2px 3px rgba(0, 0, 0, 0.6);
 
     &.active {
-      background-color: rgba(166, 166, 166, 1);
+      // background-color: rgba(166, 166, 166, .6);
+      // background-color: rgba(159, 161, 157, .6);
+      background-color: rgba(84, 168, 196, .8);
     }
 
     &:hover {
-      background-color: rgba(166, 166, 166, 1);
+      // background-color: rgba(166, 166, 166, .6);
+      // background-color: rgba(196, 196, 196, .6);
+      background-color: rgba(113, 208, 240, .6);
     }
 
     &:active {
       box-shadow:
-        inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+        inset -2px -2px 3px rgba(255, 255, 255, .6),
         inset 2px 2px 3px rgba(0, 0, 0, 0.6);
     }
   }
@@ -75,6 +141,7 @@ main {
   width: 100vw;
   height: 100%;
   overflow: hidden;
+  z-index: 2;
 }
 
 .popup-img {
@@ -86,53 +153,82 @@ main {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 14px;
 
   &:hover {
-    transform: scale(2);
+    transform: scale(3);
   }
 }
 
 .map-filters {
   position: absolute;
-  width: 200px;
-  height: calc(100vh - 120px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 1000;
   left: 0;
-  padding-top: 60px;
-  background-color: rgba(221, 221, 221, .4);
-
-  @media (width <= 480px) {
-    background: transparent;
-  }
+  right: 0;
+  top: 60px;
 
   .map-filters-item {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     cursor: pointer;
     height: 26px;
-    margin: 0 20px 20px;
-    padding-left: 10px;
+    width: 145px;
     border: 2px solid transparent;
     border-radius: 20px;
-    background-color: rgba(166, 166, 166, 1);
+    // background-color: rgba(166, 166, 166, .4);
+    // background-color: rgba(227, 227, 227, .6);
+    // background-image: linear-gradient(
+    //   to top left,
+    //   rgba(0, 0, 0, 0.2),
+    //   rgba(0, 0, 0, 0.2) 30%,
+    //   rgba(0, 0, 0, 0.3) 70%
+    // );
+    background-color: rgba(102, 95, 95, .6);
     background-image: linear-gradient(
       to top left,
       rgba(0, 0, 0, 0.2),
       rgba(0, 0, 0, 0.2) 30%,
-      rgba(0, 0, 0, 0.3) 70%
+      rgba(0, 0, 0, 0)
     );
+    box-shadow:
+      inset 2px 2px 3px rgba(255, 255, 255, .6),
+      inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+
+    &:hover {
+      background-color: rgba(166, 166, 166, .6);
+    }
 
     @media (width <= 480px) {
       width: 25px;
       height: 25px;
       padding: 0;
       justify-content: center;
+      margin: 0 5px 5px;
     }
 
+    .filter {
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+    }
+
+    // &.active {
+    //   border: 2px solid gold;
+    // }
+
+    // &:hover,
+    // &.active {
+    //   background-color: rgba(227, 227, 227, .6);
+    // }
+
+
     &.active {
-      border: 2px solid gold;
+      background-color: rgba(159, 161, 157, .6);
     }
 
     &:hover {
-      background-color: rgba(227, 227, 227, 1);
+      background-color: rgba(196, 196, 196, .6);
     }
 
     .filter-img {
@@ -141,7 +237,7 @@ main {
     }
 
     .filter-name {
-      margin-left: 10px;
+      margin: 0 10px;
       color: #fff;
       text-shadow: 1px 1px 1px #000;
 
@@ -150,6 +246,10 @@ main {
       }
     }
   }
+}
+
+.leaflet-container {
+  background: transparent;
 }
 
 .leaflet-control-container {
@@ -169,4 +269,13 @@ main {
 .leaflet-marker-pane img {
   background-color: transparent;
   border: none;
+}
+
+.ant-switch {
+  margin-right: 5px;
+  background-color: #870e0e !important;
+}
+
+.ant-switch-checked {
+  background-color: #83e04c !important;
 }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Switch } from 'antd';
 import { Map } from './Map.js';
 
 import '../styles/App.scss';
@@ -15,7 +16,6 @@ const App = () => {
   const [mapType, setMapType] = useState(constants.stillwater);
   const [filters, setFilters] = useState(initialFilterState);
 
-
   const buttonMapClick = (mapImage, mapType) => {
     setMapImage(mapImage);
     setMapType(mapType);
@@ -31,20 +31,11 @@ const App = () => {
   return (
     <>
       <header>
-        <div className='header'>Hunt Showdown Map</div>
+        <div className='header'>Hunt: Showdown</div>
       </header>
       <main>
-        <div className='map-filters'>
-          <div className={`map-filters-item ${filters.toolbox && 'active'}`} onClick={(e) => filterItemClick('toolbox')}>
-            <img className='filter-img' src={toolBox} />
-            <div className='filter-name'>Tool Box</div>
-          </div>
-          <div className={`map-filters-item ${filters.trait && 'active'}`} onClick={(e) => filterItemClick('trait')}>
-            <img className='filter-img' src={trait} />
-            <div className='filter-name'>Trait</div>
-          </div>
-        </div>
         <div className='map-field'>
+          <div className='fog' />
           <div className='header-buttons'>
             <button
               className={`map-button ${mapType == constants.stillwater && 'active'}`}
@@ -67,6 +58,30 @@ const App = () => {
             >
               DeSalle
             </button>
+          </div>
+          <div className='map-filters'>
+            <div className={`map-filters-item ${filters.toolbox && 'active'}`} onClick={(e) => filterItemClick('toolbox')}>
+              <div className='filter'>
+                <img className='filter-img' src={toolBox} />
+                <div className='filter-name'>Tool Box</div>
+              </div>
+              <Switch
+                size='small'
+                checked={filters.toolbox}
+                onChange={(e) => filterItemClick('toolbox')}
+              />
+            </div>
+            <div className={`map-filters-item ${filters.trait && 'active'}`} onClick={(e) => filterItemClick('trait')}>
+              <div className='filter'>
+                <img className='filter-img' src={trait} />
+                <div className='filter-name'>Trait</div>
+              </div>
+              <Switch
+                size='small'
+                checked={filters.trait}
+                onChange={(e) => filterItemClick('toolbox')}
+              />
+            </div>
           </div>
           <Map mapImage={mapImage} mapType={mapType} filters={filters}/>
         </div>
