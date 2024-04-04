@@ -3,7 +3,7 @@
   \**************************************************************************************************************/
 @font-face {
   font-family: "Unfair";
-  src: url("images\Unfair%20Style%202%20Rough.49e8ce70524e30a90484.woff") format("woff");
+  src: url(49e8ce70524e30a90484.woff) format("woff");
 }
 @keyframes fogmove {
   from {
@@ -42,7 +42,7 @@ main {
 
 .map-field {
   background-size: cover;
-  background-image: url(images\27_Hunt_screenshot_Update4.1.80d8052fe7b67444b726.jpg);
+  background-image: url(80d8052fe7b67444b726.jpg);
 }
 .map-field::before, .map-field::after,
 .map-field .fog::before,
@@ -70,12 +70,12 @@ main {
 }
 .map-field::before,
 .map-field .fog::before {
-  background-image: url(images\fog-1.f941d9347efb2a3e7d1d.png);
+  background-image: url(f941d9347efb2a3e7d1d.png);
   animation: fogmove 40s linear 0s infinite;
 }
 .map-field::after,
 .map-field .fog::after {
-  background-image: url(images\fog-2.8aeda6af6c952275e3de.png);
+  background-image: url(8aeda6af6c952275e3de.png);
   animation: fogmove 30s linear 0s infinite;
 }
 
@@ -229,4 +229,4 @@ main {
   background-color: #83e04c !important;
 }
 
-/*# sourceMappingURL=main.ae233e5299a4a645bae2.css.map*/
+/*# sourceMappingURL=main.0b791eb4ccf3816e9385.css.map*/
