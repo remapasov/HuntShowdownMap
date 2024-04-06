@@ -152,20 +152,22 @@ main {
   justify-content: space-between;
   cursor: pointer;
   height: 26px;
-  width: 145px;
+  width: 150px;
   border: 2px solid transparent;
   border-radius: 20px;
-  background-color: rgba(102, 95, 95, 0.6);
+  background-color: rgba(58, 116, 135, 0.6);
   background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
   box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
 }
-.map-filters .map-filters-item:hover {
-  background-color: rgba(166, 166, 166, 0.6);
+@media (width > 480px) {
+  .map-filters .map-filters-item:hover {
+    background-color: rgba(113, 208, 240, 0.6);
+  }
 }
 @media (width <= 480px) {
   .map-filters .map-filters-item {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     padding: 0;
     justify-content: center;
     margin: 0 5px 5px;
@@ -176,15 +178,27 @@ main {
   align-items: center;
   margin-left: 10px;
 }
-.map-filters .map-filters-item.active {
-  background-color: rgba(159, 161, 157, 0.6);
+@media (width <= 480px) {
+  .map-filters .map-filters-item .filter {
+    margin: 0;
+  }
 }
-.map-filters .map-filters-item:hover {
-  background-color: rgba(196, 196, 196, 0.6);
+@media (width <= 480px) {
+  .map-filters .map-filters-item .filter-switch {
+    display: none;
+  }
+}
+.map-filters .map-filters-item.active {
+  background-color: rgba(84, 168, 196, 0.8);
+}
+@media (width <= 480px) {
+  .map-filters .map-filters-item.active {
+    background-color: #83e04c;
+  }
 }
 .map-filters .map-filters-item .filter-img {
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
 }
 .map-filters .map-filters-item .filter-name {
   margin: 0 10px;
@@ -201,7 +215,8 @@ main {
   background: transparent;
 }
 
-.leaflet-control-container {
+.leaflet-control-container,
+.leaflet-popup-tip {
   display: none;
 }
 
@@ -229,4 +244,4 @@ main {
   background-color: #83e04c !important;
 }
 
-/*# sourceMappingURL=main.0b791eb4ccf3816e9385.css.map*/
+/*# sourceMappingURL=main.0e50f0821bef4282f615.css.map*/

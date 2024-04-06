@@ -8,8 +8,9 @@ import stillwater from '../images/Stillwater_origin.png';
 import lawson from '../images/Lawson_origin.png';
 import desalle from '../images/Desalle_origin.png';
 
-import toolBox from '../images/toolbox_img.png';
-import trait from '../images/levering_cr.jpg';
+import toolBox from '../images/toolbox_img_cr.png';
+import trait from '../images/trait_cr.png';
+import cash from '../images/cash_cr.png';
 
 const App = () => {
   const [mapImage, setMapImage] = useState(stillwater);
@@ -66,6 +67,7 @@ const App = () => {
                 <div className='filter-name'>Tool Box</div>
               </div>
               <Switch
+                className='filter-switch'
                 size='small'
                 checked={filters.toolbox}
                 onChange={(e) => filterItemClick('toolbox')}
@@ -77,6 +79,19 @@ const App = () => {
                 <div className='filter-name'>Trait</div>
               </div>
               <Switch
+                className='filter-switch'
+                size='small'
+                checked={filters.trait}
+                onChange={(e) => filterItemClick('toolbox')}
+              />
+            </div>
+            <div className={`map-filters-item ${filters.cash && 'active'}`} onClick={(e) => filterItemClick('cash')}>
+              <div className='filter'>
+                <img className='filter-img' src={cash} />
+                <div className='filter-name'>Cash</div>
+              </div>
+              <Switch
+                className='filter-switch'
                 size='small'
                 checked={filters.trait}
                 onChange={(e) => filterItemClick('toolbox')}

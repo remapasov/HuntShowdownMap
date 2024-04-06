@@ -6,7 +6,7 @@ import trait_2_lawson from '../images/Trait/Lawson/Lawson_Pork_20240324132821.jp
 import trait_1_stillwater from '../images/Trait/Stillwatter/Stillwater_Fish_20240323221050.jpg';
 import trait_1_desalle from '../images/Trait/Desalle/Desalle_FortBolden_20240323233234.jpg';
 
-import toolbox from '../images/toolbox_img.png';
+import toolbox from '../images/Toolbox.png';
 import trait from '../images/levering_cr.jpg';
 
 export const constants = {
@@ -18,12 +18,16 @@ export const constants = {
 export const initialFilterState = {
   toolbox: true,
   trait: true,
+  cash: true,
 }
 
 export const toolboxImg = {
   stillwater: [
     { mapImage: toolbox_1_desalle, icon: toolbox, position: [1850, 560] },
     { mapImage: toolbox_2_desalle, icon: toolbox, position: [250, 260] },
+    // { mapImage: 'https://www.mediafire.com/convkey/352d/sk49kq3eb34ts5rzg.jpg?size_id=a',
+    //   icon: toolbox, position: [1850, 560]
+    // }
   ],
   lawson: [
     { mapImage: toolbox_1_desalle, icon: toolbox, position: [850, 860] },

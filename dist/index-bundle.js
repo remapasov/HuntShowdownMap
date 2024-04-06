@@ -7428,15 +7428,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! antd */ "./node_modules/antd/es/switch/index.js");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! antd */ "./node_modules/antd/es/switch/index.js");
 /* harmony import */ var _Map_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Map.js */ "./src/components/Map.js");
 /* harmony import */ var _styles_App_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/App.scss */ "./src/styles/App.scss");
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./constants */ "./src/components/constants.js");
 /* harmony import */ var _images_Stillwater_origin_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../images/Stillwater_origin.png */ "./src/images/Stillwater_origin.png");
 /* harmony import */ var _images_Lawson_origin_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../images/Lawson_origin.png */ "./src/images/Lawson_origin.png");
 /* harmony import */ var _images_Desalle_origin_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../images/Desalle_origin.png */ "./src/images/Desalle_origin.png");
-/* harmony import */ var _images_toolbox_img_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../images/toolbox_img.png */ "./src/images/toolbox_img.png");
-/* harmony import */ var _images_levering_cr_jpg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../images/levering_cr.jpg */ "./src/images/levering_cr.jpg");
+/* harmony import */ var _images_toolbox_img_cr_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../images/toolbox_img_cr.png */ "./src/images/toolbox_img_cr.png");
+/* harmony import */ var _images_trait_cr_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../images/trait_cr.png */ "./src/images/trait_cr.png");
+/* harmony import */ var _images_cash_cr_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../images/cash_cr.png */ "./src/images/cash_cr.png");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
@@ -7449,6 +7450,7 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -7516,10 +7518,11 @@ var App = function App() {
     className: "filter"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     className: "filter-img",
-    src: _images_toolbox_img_png__WEBPACK_IMPORTED_MODULE_7__
+    src: _images_toolbox_img_cr_png__WEBPACK_IMPORTED_MODULE_7__
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "filter-name"
-  }, "Tool Box")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(antd__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, "Tool Box")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(antd__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    className: "filter-switch",
     size: "small",
     checked: filters.toolbox,
     onChange: function onChange(e) {
@@ -7534,10 +7537,30 @@ var App = function App() {
     className: "filter"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     className: "filter-img",
-    src: _images_levering_cr_jpg__WEBPACK_IMPORTED_MODULE_8__
+    src: _images_trait_cr_png__WEBPACK_IMPORTED_MODULE_8__
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "filter-name"
-  }, "Trait")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(antd__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, "Trait")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(antd__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    className: "filter-switch",
+    size: "small",
+    checked: filters.trait,
+    onChange: function onChange(e) {
+      return filterItemClick('toolbox');
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "map-filters-item ".concat(filters.cash && 'active'),
+    onClick: function onClick(e) {
+      return filterItemClick('cash');
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "filter"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+    className: "filter-img",
+    src: _images_cash_cr_png__WEBPACK_IMPORTED_MODULE_9__
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "filter-name"
+  }, "Cash")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(antd__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    className: "filter-switch",
     size: "small",
     checked: filters.trait,
     onChange: function onChange(e) {
@@ -7583,7 +7606,7 @@ var bounds = [[-4000, -4000], [4000, 4000]];
 var setIcon = function setIcon(iconUrl) {
   return new leaflet__WEBPACK_IMPORTED_MODULE_1__.Icon({
     iconUrl: iconUrl,
-    iconSize: new leaflet__WEBPACK_IMPORTED_MODULE_1__.Point(25, 25),
+    iconSize: new leaflet__WEBPACK_IMPORTED_MODULE_1__.Point(30, 30),
     className: 'leaflet-div-icon',
     interactive: false
   });
@@ -7663,7 +7686,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_Trait_Lawson_Lawson_Pork_20240324132821_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../images/Trait/Lawson/Lawson_Pork_20240324132821.jpg */ "./src/images/Trait/Lawson/Lawson_Pork_20240324132821.jpg");
 /* harmony import */ var _images_Trait_Stillwatter_Stillwater_Fish_20240323221050_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../images/Trait/Stillwatter/Stillwater_Fish_20240323221050.jpg */ "./src/images/Trait/Stillwatter/Stillwater_Fish_20240323221050.jpg");
 /* harmony import */ var _images_Trait_Desalle_Desalle_FortBolden_20240323233234_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../images/Trait/Desalle/Desalle_FortBolden_20240323233234.jpg */ "./src/images/Trait/Desalle/Desalle_FortBolden_20240323233234.jpg");
-/* harmony import */ var _images_toolbox_img_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../images/toolbox_img.png */ "./src/images/toolbox_img.png");
+/* harmony import */ var _images_Toolbox_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../images/Toolbox.png */ "./src/images/Toolbox.png");
 /* harmony import */ var _images_levering_cr_jpg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../images/levering_cr.jpg */ "./src/images/levering_cr.jpg");
 
 
@@ -7680,34 +7703,39 @@ var constants = {
 };
 var initialFilterState = {
   toolbox: true,
-  trait: true
+  trait: true,
+  cash: true
 };
 var toolboxImg = {
   stillwater: [{
     mapImage: _images_Toolbox_Desalle_Desalle_DarinShipyard_20240323201302_jpg__WEBPACK_IMPORTED_MODULE_0__,
-    icon: _images_toolbox_img_png__WEBPACK_IMPORTED_MODULE_6__,
+    icon: _images_Toolbox_png__WEBPACK_IMPORTED_MODULE_6__,
     position: [1850, 560]
   }, {
     mapImage: _images_Toolbox_Desalle_Desalle_Prison_20240323233120_jpg__WEBPACK_IMPORTED_MODULE_1__,
-    icon: _images_toolbox_img_png__WEBPACK_IMPORTED_MODULE_6__,
+    icon: _images_Toolbox_png__WEBPACK_IMPORTED_MODULE_6__,
     position: [250, 260]
-  }],
+  }
+  // { mapImage: 'https://www.mediafire.com/convkey/352d/sk49kq3eb34ts5rzg.jpg?size_id=a',
+  //   icon: toolbox, position: [1850, 560]
+  // }
+  ],
   lawson: [{
     mapImage: _images_Toolbox_Desalle_Desalle_DarinShipyard_20240323201302_jpg__WEBPACK_IMPORTED_MODULE_0__,
-    icon: _images_toolbox_img_png__WEBPACK_IMPORTED_MODULE_6__,
+    icon: _images_Toolbox_png__WEBPACK_IMPORTED_MODULE_6__,
     position: [850, 860]
   }, {
     mapImage: _images_Toolbox_Desalle_Desalle_Prison_20240323233120_jpg__WEBPACK_IMPORTED_MODULE_1__,
-    icon: _images_toolbox_img_png__WEBPACK_IMPORTED_MODULE_6__,
+    icon: _images_Toolbox_png__WEBPACK_IMPORTED_MODULE_6__,
     position: [450, 360]
   }],
   desalle: [{
     mapImage: _images_Toolbox_Desalle_Desalle_DarinShipyard_20240323201302_jpg__WEBPACK_IMPORTED_MODULE_0__,
-    icon: _images_toolbox_img_png__WEBPACK_IMPORTED_MODULE_6__,
+    icon: _images_Toolbox_png__WEBPACK_IMPORTED_MODULE_6__,
     position: [1850, 160]
   }, {
     mapImage: _images_Toolbox_Desalle_Desalle_Prison_20240323233120_jpg__WEBPACK_IMPORTED_MODULE_1__,
-    icon: _images_toolbox_img_png__WEBPACK_IMPORTED_MODULE_6__,
+    icon: _images_Toolbox_png__WEBPACK_IMPORTED_MODULE_6__,
     position: [250, 160]
   }]
 };
@@ -58860,6 +58888,17 @@ module.exports = __webpack_require__.p + "d4ed5dd7a940506387ab.png";
 
 /***/ }),
 
+/***/ "./src/images/Toolbox.png":
+/*!********************************!*\
+  !*** ./src/images/Toolbox.png ***!
+  \********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "722104e948b891ab9231.png";
+
+/***/ }),
+
 /***/ "./src/images/Toolbox/Desalle/Desalle_DarinShipyard_20240323201302.jpg":
 /*!*****************************************************************************!*\
   !*** ./src/images/Toolbox/Desalle/Desalle_DarinShipyard_20240323201302.jpg ***!
@@ -58926,6 +58965,17 @@ module.exports = __webpack_require__.p + "a60d0be120819088d00a.jpg";
 
 /***/ }),
 
+/***/ "./src/images/cash_cr.png":
+/*!********************************!*\
+  !*** ./src/images/cash_cr.png ***!
+  \********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "e68e97d4e37f9f6ce730.png";
+
+/***/ }),
+
 /***/ "./src/images/levering_cr.jpg":
 /*!************************************!*\
   !*** ./src/images/levering_cr.jpg ***!
@@ -58937,14 +58987,25 @@ module.exports = __webpack_require__.p + "e339b5425add0cc7a0e6.jpg";
 
 /***/ }),
 
-/***/ "./src/images/toolbox_img.png":
-/*!************************************!*\
-  !*** ./src/images/toolbox_img.png ***!
-  \************************************/
+/***/ "./src/images/toolbox_img_cr.png":
+/*!***************************************!*\
+  !*** ./src/images/toolbox_img_cr.png ***!
+  \***************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-module.exports = __webpack_require__.p + "2f6d13025a0e78790144.png";
+module.exports = __webpack_require__.p + "8295cc5373c9f7d0eec4.png";
+
+/***/ }),
+
+/***/ "./src/images/trait_cr.png":
+/*!*********************************!*\
+  !*** ./src/images/trait_cr.png ***!
+  \*********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "8c3ccf9594769c5bec21.png";
 
 /***/ }),
 

@@ -48,7 +48,7 @@ main {
   &::after,
   .fog::before,
   .fog::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -105,7 +105,6 @@ main {
     text-shadow: 1px 1px 1px #000;
     cursor: pointer;
     border-radius: 10px;
-    // background-color: rgba(102, 95, 95, .6);
     background-color: rgba(58, 116, 135, .6);
     background-image: linear-gradient(
       to top left,
@@ -173,18 +172,10 @@ main {
     justify-content: space-between;
     cursor: pointer;
     height: 26px;
-    width: 145px;
+    width: 150px;
     border: 2px solid transparent;
     border-radius: 20px;
-    // background-color: rgba(166, 166, 166, .4);
-    // background-color: rgba(227, 227, 227, .6);
-    // background-image: linear-gradient(
-    //   to top left,
-    //   rgba(0, 0, 0, 0.2),
-    //   rgba(0, 0, 0, 0.2) 30%,
-    //   rgba(0, 0, 0, 0.3) 70%
-    // );
-    background-color: rgba(102, 95, 95, .6);
+    background-color: rgba(58, 116, 135, .6);
     background-image: linear-gradient(
       to top left,
       rgba(0, 0, 0, 0.2),
@@ -195,13 +186,15 @@ main {
       inset 2px 2px 3px rgba(255, 255, 255, .6),
       inset -2px -2px 3px rgba(0, 0, 0, 0.6);
 
-    &:hover {
-      background-color: rgba(166, 166, 166, .6);
+    @media (width > 480px) {
+      &:hover {
+        background-color: rgba(113, 208, 240, .6);
+      }
     }
 
     @media (width <= 480px) {
-      width: 25px;
-      height: 25px;
+      width: 30px;
+      height: 30px;
       padding: 0;
       justify-content: center;
       margin: 0 5px 5px;
@@ -211,29 +204,29 @@ main {
       display: flex;
       align-items: center;
       margin-left: 10px;
+
+      @media (width <= 480px) {
+        margin: 0;
+      }
     }
 
-    // &.active {
-    //   border: 2px solid gold;
-    // }
-
-    // &:hover,
-    // &.active {
-    //   background-color: rgba(227, 227, 227, .6);
-    // }
-
+    .filter-switch {
+      @media (width <= 480px) {
+        display: none;
+      }
+    }
 
     &.active {
-      background-color: rgba(159, 161, 157, .6);
-    }
+      background-color: rgba(84, 168, 196, .8);
 
-    &:hover {
-      background-color: rgba(196, 196, 196, .6);
+      @media (width <= 480px) {
+        background-color: #83e04c;
+      }
     }
 
     .filter-img {
-      width: 20px;
-      height: 20px;
+      width: 28px;
+      height: 28px;
     }
 
     .filter-name {
@@ -252,7 +245,8 @@ main {
   background: transparent;
 }
 
-.leaflet-control-container {
+.leaflet-control-container,
+.leaflet-popup-tip {
   display: none;
 }
 

@@ -10,7 +10,7 @@ const bounds = [[-4000, -4000], [4000, 4000]];
 const setIcon = (iconUrl) => {
   return new Icon({
     iconUrl: iconUrl,
-    iconSize: new Point(25, 25),
+    iconSize: new Point(30, 30),
     className: 'leaflet-div-icon',
     interactive: false,
   });
