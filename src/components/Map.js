@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ImageOverlay, MapContainer, Marker, Popup, useMapEvents } from 'react-leaflet';
 import { divIcon, DomEvent, CRS, Icon, Point } from 'leaflet';
 
-import { traitImg, toolboxImg, } from './constants';
+import { traitImg, toolboxImg, cashImg } from './constants';
 
 const position = [0, 0];
 const bounds = [[-4000, -4000], [4000, 4000]];
@@ -22,8 +22,7 @@ export const Map = (props) => {
  const MapEvents = () => {
     useMapEvents({
       click(e) {
-        console.log(e.latlng.lat);
-        console.log(e.latlng.lng);
+        console.log(`Position: [${e.latlng.lat}, ${e.latlng.lng}]`);
       },
     });
     return false;
@@ -54,7 +53,7 @@ export const Map = (props) => {
         return (
           <Marker
             position={item.position}
-            icon={setIcon(item.icon)}
+            icon={setIcon(toolboxImg.icon)}
           >
             <Popup
               closeOnClick={true}
@@ -69,7 +68,22 @@ export const Map = (props) => {
         return (
           <Marker
             position={item.position}
-            icon={setIcon(item.icon)}
+            icon={setIcon(traitImg.icon)}
+          >
+            <Popup
+              closeOnClick={true}
+              closeButton={false}
+            >
+              <img className='popup-img' src={item.mapImage}/>
+            </Popup>
+          </Marker>
+        )
+      })}
+      {props.filters.cash && cashImg[props.mapType].map((item) => {
+        return (
+          <Marker
+            position={item.position}
+            icon={setIcon(cashImg.icon)}
           >
             <Popup
               closeOnClick={true}

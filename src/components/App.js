@@ -93,8 +93,8 @@ const App = () => {
               <Switch
                 className='filter-switch'
                 size='small'
-                checked={filters.trait}
-                onChange={(e) => filterItemClick('toolbox')}
+                checked={filters.cash}
+                onChange={(e) => filterItemClick('cash')}
               />
             </div>
           </div>
