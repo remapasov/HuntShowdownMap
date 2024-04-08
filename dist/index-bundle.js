@@ -7562,9 +7562,9 @@ var App = function App() {
   }, "Cash")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(antd__WEBPACK_IMPORTED_MODULE_10__["default"], {
     className: "filter-switch",
     size: "small",
-    checked: filters.trait,
+    checked: filters.cash,
     onChange: function onChange(e) {
-      return filterItemClick('toolbox');
+      return filterItemClick('cash');
     }
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Map_js__WEBPACK_IMPORTED_MODULE_1__.Map, {
     mapImage: mapImage,
@@ -7616,8 +7616,7 @@ var Map = function Map(props) {
   var MapEvents = function MapEvents() {
     (0,react_leaflet__WEBPACK_IMPORTED_MODULE_3__.useMapEvents)({
       click: function click(e) {
-        console.log(e.latlng.lat);
-        console.log(e.latlng.lng);
+        console.log("Position: [".concat(e.latlng.lat, ", ").concat(e.latlng.lng, "]"));
       }
     });
     return false;
@@ -7642,7 +7641,7 @@ var Map = function Map(props) {
   }), props.filters.toolbox && _constants__WEBPACK_IMPORTED_MODULE_2__.toolboxImg[props.mapType].map(function (item) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_leaflet__WEBPACK_IMPORTED_MODULE_6__.Marker, {
       position: item.position,
-      icon: setIcon(item.icon)
+      icon: setIcon(_constants__WEBPACK_IMPORTED_MODULE_2__.toolboxImg.icon)
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_leaflet__WEBPACK_IMPORTED_MODULE_7__.Popup, {
       closeOnClick: true,
       closeButton: false
@@ -7653,7 +7652,18 @@ var Map = function Map(props) {
   }), props.filters.trait && _constants__WEBPACK_IMPORTED_MODULE_2__.traitImg[props.mapType].map(function (item) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_leaflet__WEBPACK_IMPORTED_MODULE_6__.Marker, {
       position: item.position,
-      icon: setIcon(item.icon)
+      icon: setIcon(_constants__WEBPACK_IMPORTED_MODULE_2__.traitImg.icon)
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_leaflet__WEBPACK_IMPORTED_MODULE_7__.Popup, {
+      closeOnClick: true,
+      closeButton: false
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+      className: "popup-img",
+      src: item.mapImage
+    })));
+  }), props.filters.cash && _constants__WEBPACK_IMPORTED_MODULE_2__.cashImg[props.mapType].map(function (item) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_leaflet__WEBPACK_IMPORTED_MODULE_6__.Marker, {
+      position: item.position,
+      icon: setIcon(_constants__WEBPACK_IMPORTED_MODULE_2__.cashImg.icon)
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_leaflet__WEBPACK_IMPORTED_MODULE_7__.Popup, {
       closeOnClick: true,
       closeButton: false
@@ -7675,6 +7685,7 @@ var Map = function Map(props) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   cashImg: () => (/* binding */ cashImg),
 /* harmony export */   constants: () => (/* binding */ constants),
 /* harmony export */   initialFilterState: () => (/* binding */ initialFilterState),
 /* harmony export */   toolboxImg: () => (/* binding */ toolboxImg),
@@ -7687,7 +7698,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_Trait_Stillwatter_Stillwater_Fish_20240323221050_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../images/Trait/Stillwatter/Stillwater_Fish_20240323221050.jpg */ "./src/images/Trait/Stillwatter/Stillwater_Fish_20240323221050.jpg");
 /* harmony import */ var _images_Trait_Desalle_Desalle_FortBolden_20240323233234_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../images/Trait/Desalle/Desalle_FortBolden_20240323233234.jpg */ "./src/images/Trait/Desalle/Desalle_FortBolden_20240323233234.jpg");
 /* harmony import */ var _images_Toolbox_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../images/Toolbox.png */ "./src/images/Toolbox.png");
-/* harmony import */ var _images_levering_cr_jpg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../images/levering_cr.jpg */ "./src/images/levering_cr.jpg");
+/* harmony import */ var _images_trait_cr_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../images/trait_cr.png */ "./src/images/trait_cr.png");
+/* harmony import */ var _images_cash_cr_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../images/cash_cr.png */ "./src/images/cash_cr.png");
+
 
 
 
@@ -7707,57 +7720,64 @@ var initialFilterState = {
   cash: true
 };
 var toolboxImg = {
+  icon: _images_Toolbox_png__WEBPACK_IMPORTED_MODULE_6__,
   stillwater: [{
     mapImage: _images_Toolbox_Desalle_Desalle_DarinShipyard_20240323201302_jpg__WEBPACK_IMPORTED_MODULE_0__,
-    icon: _images_Toolbox_png__WEBPACK_IMPORTED_MODULE_6__,
     position: [1850, 560]
   }, {
     mapImage: _images_Toolbox_Desalle_Desalle_Prison_20240323233120_jpg__WEBPACK_IMPORTED_MODULE_1__,
-    icon: _images_Toolbox_png__WEBPACK_IMPORTED_MODULE_6__,
     position: [250, 260]
   }
   // { mapImage: 'https://www.mediafire.com/convkey/352d/sk49kq3eb34ts5rzg.jpg?size_id=a',
-  //   icon: toolbox, position: [1850, 560]
+  //   position: [1850, 560]
   // }
   ],
   lawson: [{
     mapImage: _images_Toolbox_Desalle_Desalle_DarinShipyard_20240323201302_jpg__WEBPACK_IMPORTED_MODULE_0__,
-    icon: _images_Toolbox_png__WEBPACK_IMPORTED_MODULE_6__,
     position: [850, 860]
   }, {
     mapImage: _images_Toolbox_Desalle_Desalle_Prison_20240323233120_jpg__WEBPACK_IMPORTED_MODULE_1__,
-    icon: _images_Toolbox_png__WEBPACK_IMPORTED_MODULE_6__,
     position: [450, 360]
   }],
   desalle: [{
     mapImage: _images_Toolbox_Desalle_Desalle_DarinShipyard_20240323201302_jpg__WEBPACK_IMPORTED_MODULE_0__,
-    icon: _images_Toolbox_png__WEBPACK_IMPORTED_MODULE_6__,
     position: [1850, 160]
   }, {
     mapImage: _images_Toolbox_Desalle_Desalle_Prison_20240323233120_jpg__WEBPACK_IMPORTED_MODULE_1__,
-    icon: _images_Toolbox_png__WEBPACK_IMPORTED_MODULE_6__,
     position: [250, 160]
   }]
 };
 var traitImg = {
+  icon: _images_trait_cr_png__WEBPACK_IMPORTED_MODULE_7__,
   stillwater: [{
     mapImage: _images_Trait_Stillwatter_Stillwater_Fish_20240323221050_jpg__WEBPACK_IMPORTED_MODULE_4__,
-    icon: _images_levering_cr_jpg__WEBPACK_IMPORTED_MODULE_7__,
     position: [-350, 260]
   }],
   lawson: [{
     mapImage: _images_Trait_Lawson_Lawson_FortCarmick_20240322135758_jpg__WEBPACK_IMPORTED_MODULE_2__,
-    icon: _images_levering_cr_jpg__WEBPACK_IMPORTED_MODULE_7__,
     position: [1650, 1560]
   }, {
     mapImage: _images_Trait_Lawson_Lawson_Pork_20240324132821_jpg__WEBPACK_IMPORTED_MODULE_3__,
-    icon: _images_levering_cr_jpg__WEBPACK_IMPORTED_MODULE_7__,
     position: [-650, 560]
   }],
   desalle: [{
     mapImage: _images_Trait_Desalle_Desalle_FortBolden_20240323233234_jpg__WEBPACK_IMPORTED_MODULE_5__,
-    icon: _images_levering_cr_jpg__WEBPACK_IMPORTED_MODULE_7__,
     position: [150, 1560]
+  }]
+};
+var cashImg = {
+  icon: _images_cash_cr_png__WEBPACK_IMPORTED_MODULE_8__,
+  stillwater: [{
+    mapImage: _images_Trait_Stillwatter_Stillwater_Fish_20240323221050_jpg__WEBPACK_IMPORTED_MODULE_4__,
+    position: [-350, 1560]
+  }],
+  lawson: [{
+    mapImage: _images_Trait_Lawson_Lawson_Pork_20240324132821_jpg__WEBPACK_IMPORTED_MODULE_3__,
+    position: [-950, 1260]
+  }],
+  desalle: [{
+    mapImage: _images_Trait_Desalle_Desalle_FortBolden_20240323233234_jpg__WEBPACK_IMPORTED_MODULE_5__,
+    position: [1150, -1560]
   }]
 };
 
@@ -58973,17 +58993,6 @@ module.exports = __webpack_require__.p + "a60d0be120819088d00a.jpg";
 
 "use strict";
 module.exports = __webpack_require__.p + "e68e97d4e37f9f6ce730.png";
-
-/***/ }),
-
-/***/ "./src/images/levering_cr.jpg":
-/*!************************************!*\
-  !*** ./src/images/levering_cr.jpg ***!
-  \************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "e339b5425add0cc7a0e6.jpg";
 
 /***/ }),
 
