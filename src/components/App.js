@@ -1,19 +1,22 @@
-import React, { useState } from 'react';
-import { Switch } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { Select, Switch } from 'antd';
 import { Map } from './Map.js';
 
 import '../styles/App.scss';
-import { constants, initialFilterState } from './constants';
-import stillwater from '../images/Stillwater_origin.png';
-import lawson from '../images/Lawson_origin.png';
-import desalle from '../images/Desalle_origin.png';
+import { constants, dictionary, initialFilterState } from './constants';
 
 import toolBox from '../images/toolbox_img_cr.png';
 import trait from '../images/trait_cr.png';
 import cash from '../images/cash_cr.png';
 
 const App = () => {
-  const [mapImage, setMapImage] = useState(stillwater);
+  const initialLang = localStorage.getItem('huntMapLang');
+  if (!initialLang) {
+    localStorage.setItem('huntMapLang', 'en');
+  }
+
+  const [lang, setLang] = useState(initialLang || 'en');
+  const [mapImage, setMapImage] = useState(dictionary[lang].maps.stillwater);
   const [mapType, setMapType] = useState(constants.stillwater);
   const [filters, setFilters] = useState(initialFilterState);
 
@@ -29,10 +32,35 @@ const App = () => {
     });
   };
 
+  useEffect(() => {
+    setMapImage(dictionary[lang].maps[mapType]);
+  }, [lang]);
+
+  const onLangSelect = (value) => {
+    localStorage.setItem('huntMapLang', value);
+    setLang(value);
+  }
+
   return (
     <>
       <header>
         <div className='header'>Hunt: Showdown</div>
+        <div className='lang-option'>
+          <div className='lang-title'>{dictionary[lang].language}: </div>
+          <Select
+            onChange={onLangSelect}
+            options={
+              [
+                { value: 'en', label: <span>En</span> },
+                { value: 'ru', label: <span>Ru</span> }
+              ]
+            }
+            defaultValue={lang}
+            style={{
+              width: 120,
+            }}
+          />
+        </div>
       </header>
       <main>
         <div className='map-field'>
@@ -41,30 +69,30 @@ const App = () => {
             <button
               className={`map-button ${mapType == constants.stillwater && 'active'}`}
               type='button'
-              onClick={(e) => buttonMapClick(stillwater, constants.stillwater)}
+              onClick={(e) => buttonMapClick(dictionary[lang].maps.stillwater, constants.stillwater)}
             >
-              Stillwater Bayou
+              {dictionary[lang].stillwater}
             </button>
             <button
               className={`map-button ${mapType == constants.lawson && 'active'}`}
               type='button'
-              onClick={(e) => buttonMapClick(lawson, constants.lawson)}
+              onClick={(e) => buttonMapClick(dictionary[lang].maps.lawson, constants.lawson)}
             >
-              Lawson Delta
+              {dictionary[lang].lawson}
             </button>
             <button
               className={`map-button ${mapType == constants.desalle && 'active'}`}
               type='button'
-              onClick={(e) => buttonMapClick(desalle, constants.desalle)}
+              onClick={(e) => buttonMapClick(dictionary[lang].maps.desalle, constants.desalle)}
             >
-              DeSalle
+              {dictionary[lang].desalle}
             </button>
           </div>
           <div className='map-filters'>
             <div className={`map-filters-item ${filters.toolbox && 'active'}`} onClick={(e) => filterItemClick('toolbox')}>
               <div className='filter'>
                 <img className='filter-img' src={toolBox} />
-                <div className='filter-name'>Tool Box</div>
+                <div className='filter-name'>{dictionary[lang].toolbox}</div>
               </div>
               <Switch
                 className='filter-switch'
@@ -76,7 +104,7 @@ const App = () => {
             <div className={`map-filters-item ${filters.trait && 'active'}`} onClick={(e) => filterItemClick('trait')}>
               <div className='filter'>
                 <img className='filter-img' src={trait} />
-                <div className='filter-name'>Trait</div>
+                <div className='filter-name'>{dictionary[lang].trait}</div>
               </div>
               <Switch
                 className='filter-switch'
@@ -88,7 +116,7 @@ const App = () => {
             <div className={`map-filters-item ${filters.cash && 'active'}`} onClick={(e) => filterItemClick('cash')}>
               <div className='filter'>
                 <img className='filter-img' src={cash} />
-                <div className='filter-name'>Cash</div>
+                <div className='filter-name'>{dictionary[lang].cash}</div>
               </div>
               <Switch
                 className='filter-switch'

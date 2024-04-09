@@ -10,6 +10,13 @@ import toolbox from '../images/Toolbox.png';
 import trait from '../images/trait_cr.png';
 import cash from '../images/cash_cr.png';
 
+import stillwater_en from '../images/maps/stillwater_ai.png';
+import stillwater_ru from '../images/maps/stillwater_ai_ru.png';
+import lawson_en from '../images/maps/lawson_ai.png';
+import lawson_ru from '../images/maps/lawson_ai_ru.png';
+import desalle_en from '../images/maps/desalle_ai.png';
+import desalle_ru from '../images/maps/desalle_ai_ru.png';
+
 export const constants = {
   stillwater: 'stillwater',
   lawson: 'lawson',
@@ -20,6 +27,37 @@ export const initialFilterState = {
   toolbox: true,
   trait: true,
   cash: true,
+}
+
+export const dictionary = {
+  en: {
+    language: 'Language',
+    stillwater: 'Stillwater Bayou',
+    lawson: 'Lawson Delta',
+    desalle: 'Desalle',
+    toolbox: 'Tool Box',
+    trait: 'Trait',
+    cash: 'Cash',
+    maps: {
+      stillwater: stillwater_en,
+      lawson: lawson_en,
+      desalle: desalle_en
+    }
+  },
+  ru: {
+    language: 'Язык',
+    stillwater: 'Болото Стилуотер',
+    lawson: 'Дельта Лоусон',
+    desalle: 'Де-Салль',
+    toolbox: 'Ящик',
+    trait: 'Навык',
+    cash: 'Касса',
+    maps: {
+      stillwater: stillwater_ru,
+      lawson: lawson_ru,
+      desalle: desalle_ru
+    }
+  }
 }
 
 export const toolboxImg = {
