@@ -44,22 +44,24 @@ const App = () => {
   return (
     <>
       <header>
-        <div className='header'>Hunt: Showdown</div>
-        <div className='lang-option'>
-          <div className='lang-title'>{dictionary[lang].language}: </div>
-          <Select
-            onChange={onLangSelect}
-            options={
-              [
-                { value: 'en', label: <span>En</span> },
-                { value: 'ru', label: <span>Ru</span> }
-              ]
-            }
-            defaultValue={lang}
-            style={{
-              width: 120,
-            }}
-          />
+        <div className='header'>
+          <h1>Hunt: Showdown</h1>
+          <div className='lang-option'>
+            <div className='lang-title'>{dictionary[lang].language}: </div>
+            <Select
+              onChange={onLangSelect}
+              options={
+                [
+                  { value: 'en', label: <span>En</span> },
+                  { value: 'ru', label: <span>Ru</span> }
+                ]
+              }
+              defaultValue={lang}
+              style={{
+                width: 65,
+              }}
+            />
+          </div>
         </div>
       </header>
       <main>
