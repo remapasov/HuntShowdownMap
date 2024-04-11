@@ -49,11 +49,12 @@ export const Map = (props) => {
         opacity={1}
         zIndex={10}
       />
-      {props.filters.toolbox && toolboxImg[props.mapType].map((item) => {
+      {props.filters.toolbox && toolboxImg[props.mapType].map((item, index) => {
         return (
           <Marker
             position={item.position}
             icon={setIcon(toolboxImg.icon)}
+            key={index}
           >
             <Popup
               closeOnClick={true}
@@ -64,11 +65,12 @@ export const Map = (props) => {
           </Marker>
         )
       })}
-      {props.filters.trait && traitImg[props.mapType].map((item) => {
+      {props.filters.trait && traitImg[props.mapType].map((item, index) => {
         return (
           <Marker
             position={item.position}
             icon={setIcon(traitImg.icon)}
+            key={index}
           >
             <Popup
               closeOnClick={true}
@@ -79,11 +81,12 @@ export const Map = (props) => {
           </Marker>
         )
       })}
-      {props.filters.cash && cashImg[props.mapType].map((item) => {
+      {props.filters.cash && cashImg[props.mapType].map((item, index) => {
         return (
           <Marker
             position={item.position}
             icon={setIcon(cashImg.icon)}
+            key={index}
           >
             <Popup
               closeOnClick={true}

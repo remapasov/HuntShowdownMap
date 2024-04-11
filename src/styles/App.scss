@@ -359,5 +359,10 @@ main {
     padding: 3px 0 0 6px !important;
     background-color: transparent !important;
     color: #fff !important;
+
+    &:hover {
+      background-color: rgba(113, 208, 240, .5) !important;
+      border-radius: 8px !important;
+    }
   }
 }
