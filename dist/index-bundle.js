@@ -15878,6 +15878,12 @@ var dictionary = {
     }
   }
 };
+
+// {
+//   mapImage: '',
+//   position: ,
+// },
+
 var toolboxImg = {
   icon: _images_toolbox_png__WEBPACK_IMPORTED_MODULE_0__,
   stillwater: [{
